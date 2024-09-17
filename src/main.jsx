@@ -5,12 +5,14 @@ import Posts from './Components/Posts.jsx';
 import './index.css'
 import Products from './Components/Products.jsx'
 import PostsButton from './Components/PostsButton.jsx';
+import PostPagination from './Components/PostPagination.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
     {/* <Posts/> */}
     {/* <PostsButton/> */}
-    <Products/>
+    {/* <Products/> */}
+    <PostPagination/>
   </StrictMode>,
 )

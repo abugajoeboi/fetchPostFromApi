@@ -1,0 +1,65 @@
+/* Styles for the whole component */
+.body {
+    padding: 20px;
+  }
+  
+  .heading {
+    text-align: center;
+  }
+  
+  
+  /* Flexbox Grid for cards */
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Card styling */
+  .card {
+    flex: 1 1 calc(33.333% - 20px); /* Adjust to fit 3 cards per row with gap */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Ensure content is aligned vertically */
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: calc(33.333% - 20px); /* Ensure card doesn't exceed its flex-basis */
+  }
+  
+  /* Title styling */
+  .title {
+    font-weight: bold;
+  }
+  
+  /* Posts text styling */
+  .postsText {
+    margin-top: 10px;
+  }
+  
+  /* Pagination styling */
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    font-size: 16px;
+  }
+  
