@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
     {/* <App /> */}
     {/* <Posts/> */}
     {/* <PostsButton/> */}
-    {/* <Products/> */}
-    <PostPagination/>
+    <Products/>
+    {/* <PostPagination/> */}
   </StrictMode>,
 )

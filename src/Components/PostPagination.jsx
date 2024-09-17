@@ -35,37 +35,49 @@ export default function Posts() {
 
   return (
     <div className={styles.body}>
-    <h1 className={styles.heading}>POSTS</h1>
-
-      <div className={styles.container}>
-        {paginatedPosts.map((item) => (
-          <div key={item.id} className={styles.card}>
-            <h1>POST ID: {item.id}</h1>
-            <h2>USER ID: {item.userId}</h2>
-            <h3 className={styles.title}>POST TITLE: {item.title.toUpperCase()}</h3>
-            <p className={styles.postsText}>{item.body}</p>
-            <h4>TAGS: {item.tags.join(', ')}</h4>
-            <h4>views: {item.views}</h4>
+      <h1 className={styles.heading}>POSTS</h1>
+        {paginatedPosts.length > 0 ? (
+          <div className={styles.container}>
+            {paginatedPosts.map((item) => (
+              <div key={item.id} className={styles.card}>
+                <h1>POST ID: {item.id}</h1>
+                <h2>USER ID: {item.userId}</h2>
+                <h3 className={styles.title}>POST TITLE: {item.title.toUpperCase()}</h3>
+                <p className={styles.postsText}>{item.body}</p>
+                <h4>TAGS: {item.tags.join(', ')}</h4>
+                <h4>views: {item.views}</h4>
+              </div>
+            ))}
           </div>
+        ) : (
+          <h2>Posts not found</h2>
+        )}
+      
+      <div className={styles.pagination}>
+        <button
+          className={styles.arrowButton}
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+        >
+          &laquo; {/* Left Arrow */}
+        </button>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            className={`${styles.pageButton} ${currentPage === index + 1 ? styles.activePage : ''}`}
+            onClick={() => setCurrentPage(index + 1)}
+          >
+            {index + 1}
+          </button>
         ))}
+        <button
+          className={styles.arrowButton}
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          disabled={currentPage === totalPages}
+        >
+          &raquo; {/* Right Arrow */}
+        </button>
       </div>
-    
-    <div className={styles.pagination}>
-      <button
-        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-        disabled={currentPage === 1}
-      >
-        Previous
-      </button>
-      <span>Page {currentPage} of {totalPages}</span>
-      <button
-        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-        disabled={currentPage === totalPages}
-      >
-        Next
-      </button>
     </div>
-  </div>
-  
   );
 }

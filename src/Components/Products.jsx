@@ -5,7 +5,7 @@ export default function Products() {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3;  // Change this to 3 for 3 cards per page
+    const itemsPerPage = 3;  // Number of cards per page
 
     async function getProductsHandler() {
         try {
@@ -100,9 +100,13 @@ export default function Products() {
                 )}
             </div>
             <div className={styles.pagination}>
-                <button onClick={handlePreviousPage} disabled={currentPage === 1}>Previous</button>
+                <button onClick={handlePreviousPage} disabled={currentPage === 1} className={styles.arrowButton}>
+                    &laquo; {/* Left arrow */}
+                </button>
                 <span>Page {currentPage} of {totalPages}</span>
-                <button onClick={handleNextPage} disabled={currentPage === totalPages}>Next</button>
+                <button onClick={handleNextPage} disabled={currentPage === totalPages} className={styles.arrowButton}>
+                    &raquo; {/* Right arrow */}
+                </button>
             </div>
         </div>
     );

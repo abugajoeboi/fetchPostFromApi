@@ -62,4 +62,54 @@
   .pagination span {
     font-size: 16px;
   }
+
+
+
+  /*  */
+  /* Pagination container */
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Pagination button styles */
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Pagination arrow buttons */
+.arrowButton {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Page button styles */
+.pageButton {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.pageButton.activePage {
+  background-color: #0056b3; /* Darker color for the active page */
+}
+
+/* Ensure button styles do not affect the rest of the page */
+.pageButton, .arrowButton {
+  display: inline-block;
+}
+
   
